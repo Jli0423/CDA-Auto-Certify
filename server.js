@@ -15,14 +15,18 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use('/', express.static('views'));
 
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
-app.get('/', (req, res)=>{
+app.get('/certify', (req, res)=>{
   res.render('home');
+});
+
+app.post('/certify', urlencodedParser,  (req, res) =>{
   var student = new Student({
-    firstName: req.query.firstName,
-    lastName: req.query.lastName
+    firstName: req.body.firstName,
+    lastName: req.body.lastName
   });
-  student.save().then((doc) => {
+  student.save().then((doc) =>{
     res.send(doc);
   }).catch((e) =>{
     res.status(400).send();
