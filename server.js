@@ -2,6 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const promise = require('promise');
 const mongoose = require('mongoose');
+const flash = require('flash');
+const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
+const session = require('express-session');
 const MongoClient = require('mongodb').MongoClient;
 const path = require('path');
 
@@ -13,6 +17,13 @@ mongoose.connect('localhost:27017/CDA-Students');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
+app.use(cookieParser('secret'));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['secret']
+}));
+app.use(session());
+app.use(flash());
 app.use('/', express.static('views'));
 
 var urlencodedParser = bodyParser.urlencoded({extended: false});

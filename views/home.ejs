@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
+    <meta charset = "UTF-8"  />
     <title>Certification Form</title>
-    <link rel="stylesheet" href="web.css">
-</head>
+    <link rel="stylesheet" href="css/web.css">
+  	<script src="js/snap.svg-min.js"></script>
+    <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script>
+      $(function(){
+        $('.date').mask("99/99/9999", {placeholder: "mm/dd/yyyy"});
+      });
+    </script>
+  </head>
 
-<body>
-  <form id = "certifyForm" method = "post" action="certify">
-    First Name: <input type = "text" name = "firstName" id = "firstName"/><br />
-    Last Name: <input type = "text" name = "lastName" id = "lastName"/><br />
-    Driver's License: <input type = "text" name = "driverNum" /><br />
-    In-Car Start Date: <input type = "text" name = "inCarStart" /><br />
-    In-Car End Date: <input type = "text" name = "inCarEnd" /><br />
-    In-Class Start Date: <input type = "text" name = "inClassStart" /><br />
-    In-Class End Date: <input type = "text" name = "inClassEnd" /><br />
-    In-Car Final Mark: <input type = "text" name = "inCarMark" /><br />
-    In-Class Final Mark: <input type = "text" name = "inClassMark" /><br />
-    <button type = "submit" name = "button" action = "Verified">Submit</button>
-  </form>
-</body>
-
+  <body>
+    <div class = "preload">
+      <h1>Student Certification Form</h1>
+      <form id = "certifyForm" method = "post" action="certify">
+        First Name: <input type = "text" name = "firstName" id = "firstName"/><br />
+        Last Name: <input type = "text" name = "lastName" id = "lastName"/><br />
+        Middle Name (Optional): <input type = "text" name = "middleName" id = "middleName"/><br />
+        Driver's License: <input type = "text" name = "driverNum" maxlength = "17"/><br />
+        In-Car Start Date: <input type = "text" name = "inCarStart" class ="date"/><br />
+        In-Car End Date: <input type = "text" name = "inCarEnd" class ="date"/><br />
+        In-Class Start Date: <input type = "text" name = "inClassStart" class ="date"/><br />
+        In-Class End Date: <input type = "text" name = "inClassEnd" class ="date"/><br />
+        In-Car Final Mark: <input type = "text" name = "inCarMark" /><br />
+        In-Class Final Mark: <input type = "text" name = "inClassMark" /><br />
+        <button type = "submit" id = "input-submit" name = "button" onclikc = "showMessage()">Submit</button>
+      </form>
+    </div>
+  </body>
 </html>

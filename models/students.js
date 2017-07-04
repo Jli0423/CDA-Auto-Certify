@@ -11,6 +11,10 @@ var Student = mongoose.model('Student',{
     type: String,
     required: true
   },
+  middleName:{
+    type: String,
+    required: false
+  },
   driverLicense:{
     type: String
   },
