@@ -10,25 +10,25 @@
     <script>
       jQuery(function($){
         $('.date').mask("99/99/9999", {placeholder: "DD/MM/YYYY"});
-        $("#license").mask("a9999-99999-99999", {placeholder: "x0000-00000-00000"});
+        $(".license").mask("a9999-99999-99999");
       });
     </script>
   </head>
 
   <body>
-    <div class = "preload">
-      <h1>Student Certification Form</h1>
-      <form id = "certifyForm" method = "post" action="certify">
-        First Name: <input type = "text" name = "firstName" id = "firstName"/><br />
-        Last Name: <input type = "text" name = "lastName" id = "lastName"/><br />
-        Middle Name (Optional): <input type = "text" name = "middleName" id = "middleName"/><br />
-        Driver's License: <input type = "text" name = "driverNum" id = "license"/><br />
-        In-Car Start Date: <input type = "text" name = "inCarStart" class ="date"/><br />
-        In-Car End Date: <input type = "text" name = "inCarEnd" class ="date"/><br />
-        In-Class Start Date: <input type = "text" name = "inClassStart" class ="date"/><br />
-        In-Class End Date: <input type = "text" name = "inClassEnd" class ="date"/><br />
-        In-Car Final Mark: <input type = "text" name = "inCarMark" /><br />
-        In-Class Final Mark: <input type = "text" name = "inClassMark" /><br />
+    <div class = "container">
+      <form id = "contact" method = "post">
+        <h1>Student Certification Form</h1>
+        First Name: <input type = "text" name = "firstName" id = "firstName" placeholder = "First Name"autofocus/><br />
+        Last Name: <input type = "text" name = "lastName" id = "lastName" placeholder="Last Name"/><br />
+        Middle Name (Optional): <input type = "text" name = "middleName" id = "middleName" placeholder="Middle Name"/><br />
+        Driver's License: <input type = "text" name = "driverNum" class = "license" placeholder="x0000-00000-00000"/><br />
+        In-Car Start Date: <input type = "text" name = "inCarStart" class ="date" placeholder="DD/MM/YYYY"/><br />
+        In-Car End Date: <input type = "text" name = "inCarEnd" class ="date" placeholder="DD/MM/YYYY" /><br />
+        In-Class Start Date: <input type = "text" name = "inClassStart" class ="date" placeholder="DD/MM/YYYY"/><br />
+        In-Class End Date: <input type = "text" name = "inClassEnd" class ="date" placeholder="DD/MM/YYYY"/><br />
+        In-Car Final Mark (%): <input type = "text" name = "inCarMark" placeholder="%"/><br />
+        In-Class Final Mark (%): <input type = "text" name = "inClassMark" placeholder="%"/><br />
         Please ensure all the information above are correct: <input type="checkbox" required = true /><br />
         <button type = "submit" class = "myButton" name = "button">Submit</button>
       </form>
