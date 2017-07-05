@@ -1,7 +1,8 @@
+require('./config/config');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const promise = require('promise');
-const mongoose = require('mongoose');
 const flash = require('flash');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
@@ -9,13 +10,9 @@ const session = require('express-session');
 const MongoClient = require('mongodb').MongoClient;
 const path = require('path');
 
-var {
-  Student
-} = require('./models/students');
+var {Student} = require('./models/students');
+var {mongoose} = require('./db/mongoose');
 var app = express();
-
-mongoose.Promise = global.Promise;
-mongoose.connect('localhost:27017/CDA-Students');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
@@ -27,6 +24,8 @@ app.use(cookieSession({
 app.use(session());
 app.use(flash());
 app.use('/', express.static('views'));
+
+const port = process.env.PORT || 3000;
 
 var urlencodedParser = bodyParser.urlencoded({
   extended: false
@@ -56,6 +55,8 @@ app.post('/certify', urlencodedParser, (req, res) => {
   });
 });
 
-app.listen(3000, (req, res) => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`)
 })
+
+module.exports = {app};
