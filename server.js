@@ -39,7 +39,15 @@ app.get('/certify', (req, res) => {
 app.post('/certify', urlencodedParser, (req, res) => {
   var student = new Student({
     firstName: req.body.firstName,
-    lastName: req.body.lastName
+    lastName: req.body.lastName,
+    middleName: req.body.middleName,
+    driverLicense: req.body.driverNum,
+    startClassDate: req.body.inClassStart,
+    startCarDate: req.body.inCarStart,
+    endClassDate: req.body.inClassEnd,
+    endCarDate: req.body.inCarEnd,
+    classMark: req.body.inClassMark,
+    carMark: req.body.inCarMark
   });
   student.save().then((doc) => {
     res.send(doc);

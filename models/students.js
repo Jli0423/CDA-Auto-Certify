@@ -2,52 +2,52 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-var Student = mongoose.model('Student', {
-  firstName: {
+var Student = mongoose.model('Student',{
+  firstName:{
     type: String,
     required: true,
   },
-  lastName: {
+  lastName:{
     type: String,
     required: true
   },
-  middleName: {
+  middleName:{
     type: String,
     required: false
   },
-  driverLicense: {
+  driverLicense:{
     type: String,
     required: true
   },
-  startClassDate: {
+  startClassDate:{
     type: Date,
     required: true
   },
-  startCarDate: {
+  startCarDate:{
     type: Date,
     required: true
   },
-  endClassDate: {
+  endClassDate:{
     type: Date,
     required: true
   },
-  endCarDate: {
+  endCarDate:{
     type: Date,
     required: true
   },
-  classMark: {
+  classMark:{
     type: Number,
     required: true
   },
-  carMark: {
+  carMark:{
     type: Number,
     required: true
   },
-  completed: {
+  completed:{
     type: Boolean,
     default: false
   },
-  completedAt: {
+  completedAt:{
     type: Number
   }
 })
