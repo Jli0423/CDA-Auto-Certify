@@ -16,25 +16,32 @@ var Student = mongoose.model('Student', {
     required: false
   },
   driverLicense: {
-    type: String
+    type: String,
+    required: true
   },
   startClassDate: {
-    type: Date
+    type: Date,
+    required: true
   },
   startCarDate: {
-    type: Date
+    type: Date,
+    required: true
   },
   endClassDate: {
-    type: Date
+    type: Date,
+    required: true
   },
   endCarDate: {
-    type: Date
+    type: Date,
+    required: true
   },
   classMark: {
-    type: Number
+    type: Number,
+    required: true
   },
   carMark: {
-    type: Number
+    type: Number,
+    required: true
   },
   completed: {
     type: Boolean,
