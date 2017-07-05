@@ -31,11 +31,11 @@ var urlencodedParser = bodyParser.urlencoded({
   extended: false
 });
 
-app.get('/certify', (req, res) => {
+app.get('/', (req, res) => {
   res.render('home');
 });
 
-app.post('/certify', urlencodedParser, (req, res) => {
+app.post('/', urlencodedParser, (req, res) => {
   var student = new Student({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
