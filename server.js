@@ -9,7 +9,9 @@ const session = require('express-session');
 const MongoClient = require('mongodb').MongoClient;
 const path = require('path');
 
-var {Student} = require('./models/students');
+var {
+  Student
+} = require('./models/students');
 var app = express();
 
 mongoose.Promise = global.Promise;
@@ -26,24 +28,26 @@ app.use(session());
 app.use(flash());
 app.use('/', express.static('views'));
 
-var urlencodedParser = bodyParser.urlencoded({extended: false});
+var urlencodedParser = bodyParser.urlencoded({
+  extended: false
+});
 
-app.get('/certify', (req, res)=>{
+app.get('/certify', (req, res) => {
   res.render('home');
 });
 
-app.post('/certify', urlencodedParser,  (req, res) =>{
+app.post('/certify', urlencodedParser, (req, res) => {
   var student = new Student({
     firstName: req.body.firstName,
     lastName: req.body.lastName
   });
-  student.save().then((doc) =>{
+  student.save().then((doc) => {
     res.send(doc);
-  }).catch((e) =>{
+  }).catch((e) => {
     res.status(400).send();
   });
 });
 
-app.listen(3000, (req, res)=>{
+app.listen(3000, (req, res) => {
   console.log('Server is up on port 3000');
 })
