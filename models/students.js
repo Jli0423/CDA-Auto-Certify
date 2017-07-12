@@ -25,7 +25,7 @@ var Student = mongoose.model('Student',{
   },
   startCarDate:{
     type: Date,
-    required: true
+    required: false
   },
   endClassDate:{
     type: Date,

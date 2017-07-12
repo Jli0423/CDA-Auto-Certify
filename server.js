@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-app.post('/', urlencodedParser, (req, res) => {
+app.post('/certify', urlencodedParser, (req, res) => {
   var student = new Student({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
