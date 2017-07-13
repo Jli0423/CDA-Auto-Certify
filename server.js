@@ -41,7 +41,7 @@ app.get('/current', (req,res)=>{
   }).catch((e)=>{
     res.status(400).send();
   });
-});
+})
 
 app.post('/certify', urlencodedParser, (req, res) => {
   var student = new Student({
