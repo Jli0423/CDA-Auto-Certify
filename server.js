@@ -35,6 +35,14 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
+app.get('/current', (req,res)=>{
+  Student.find().then((students)=>{
+    res.send({students})
+  }).catch((e)=>{
+    res.status(400).send();
+  });
+});
+
 app.post('/certify', urlencodedParser, (req, res) => {
   var student = new Student({
     firstName: req.body.firstName,

@@ -5,5 +5,5 @@ if (env === 'development'){
   process.env.MONGODB_URI= 'mongodb://jli0423:Justin_199898li@ds064299.mlab.com:64299/heroku';
 }else if (env === 'test'){
   process.env.PORT = 3000;
-  process.env.MONGODB_URI= 'mongodb://localhost:27017/CDA-StudentsTest';
+  process.env.MONGODB_URI= 'mongodb://jli0423:Justin_199898li@ds064299.mlab.com:64299/heroku';
 }
