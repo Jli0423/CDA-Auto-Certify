@@ -26,13 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jli0423/CDA-Auto-Certify.git"
+    "url": "git+https://github.com/Jli0423/CDA-Database.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jli0423/CDA-Auto-Certify/issues"
+    "url": "https://github.com/Jli0423/CDA-Database/issues"
   },
-  "homepage": "https://github.com/Jli0423/CDA-Auto-Certify#readme"
+  "homepage": "https://github.com/Jli0423/CDA-Database#readme"
 }
