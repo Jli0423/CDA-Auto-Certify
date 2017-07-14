@@ -45,7 +45,7 @@ app.get('/current', (req,res)=>{
 
 app.post('/certify', urlencodedParser, (req, res) => {
   var student = new Student({
-    _id: req.body.firstName,
+    _id: req.body.firstName + " " + req.body.lastName,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     middleName: req.body.middleName,
