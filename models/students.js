@@ -3,9 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var Student = mongoose.model('Student',{
+  _id:{
+    type:String
+  },
   firstName:{
     type: String,
-    required: true,
+    required: true
   },
   lastName:{
     type: String,
