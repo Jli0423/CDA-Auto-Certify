@@ -43,7 +43,12 @@ app.get('/current', (req,res)=>{
   });
 })
 
+app.get("/completed", (req, res) =>{
+  res.render("completed");
+})
+
 app.post('/certify', urlencodedParser, (req, res) => {
+  res.redirect("/completed");
   var student = new Student({
     _id: req.body.firstName + " " + req.body.lastName,
     firstName: req.body.firstName,
